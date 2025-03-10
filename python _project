@@ -1,0 +1,60 @@
+import random
+position=0
+p1 = 0
+p2 = 0
+p = 0
+dice =0
+print ('welcome to snake ladder game')
+print ('Type "Start" and Click Ok')
+n = input()
+while position != 100:
+        if p==0 or n == 'start':
+            print ('player 1 press "go" to play')
+            while p != 1:
+                i = input()
+                dice = random.randrange(1, 7)
+                if i == 'go':
+                    if (position < 97 and dice == 1) or (position < 97 and dice == 5) or (position < 97 and dice == 6):
+                        print(dice, 'one more you have to play')
+                        p1 += dice
+                        position = p1
+                        print('you are in the ', p1)
+                    elif position >= 94 :
+                        if position >= 94 and position <= 100 :
+                            p1 += dice
+                            position = p1
+                        elif position==100:
+                            print ('player 1 the  winner')
+                        else:
+                            print ('will see you next chance')
+                            p = 1
+                    else :
+                        print(dice ,'player 2 will continue press "yes" to play')
+                        print('you are in the ', p1)
+                        p = 1
+
+            while p !=0:
+                i = input()
+                dice = random.randrange(1, 7)
+                if i == 'yes':
+                    if (position < 97 and dice == 1) or (position < 97 and dice == 5) or (position < 97 and dice == 6) :
+                        print(dice, 'one more you have to play')
+                        p2 += dice
+                        position = p2
+                        print('you are in the ', p2)
+                    elif position >= 94 :
+                        if position >= 94 and position <= 100:
+                            p2 += dice
+                            position = p2
+                            print ('you win')
+                        elif position == 100:
+                            print('player 2 the winner')
+                        else:
+                            print ('will see you next chance')
+                            pp = 0
+                    else :
+                        print('player 1 will continue')
+                        print('you are in the ', p2)
+                        p = 0
+        else:
+            p = 0                                                      
